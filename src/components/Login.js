@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom";
 
 
-const Login = () => {
+const Login = (props) => {
 
     let navigate = useNavigate(); 
     
@@ -28,13 +28,13 @@ const Login = () => {
 
         e.preventDefault()
         
-        fetch('http://localhost:8000/login', {
+        fetch('http://localhost:8000/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
             .then(res => res.json())
-            .then(data => {console.log(data); if(data.user.id){routeChangeHome()}})
+            .then(data => {console.log(data); if(data.id){ props.loginHandler(true); routeChangeHome()}})
     }
 
     function handleChange(e) {

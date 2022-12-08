@@ -88,6 +88,8 @@ class Dashboard extends React.Component {
     const parkState = this.state.parkState.slice();
 
     parkState[i] = 'taken';
+    //should probably update the json db here as well or it reverts on next page load/refresh
+    //would need to get the current logged in user data including numberplate and send a PUT request
 
     this.setState({
       parkState: parkState,

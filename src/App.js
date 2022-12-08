@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { AppRoutes } from "./routes/routes";
 import Navbar from "./components/Navbar";
 import Login from './components/Login';
@@ -8,10 +8,12 @@ import Login from './components/Login';
 
 const App = () => {
 
+  const [loggedIn, setLoggedIn] = useState(false)
+
   return (
     <div>
-      <Navbar isLoggedIn={false}></Navbar>
-      <AppRoutes></AppRoutes>
+      <Navbar isLoggedIn={loggedIn}></Navbar>
+      <AppRoutes loginHandler={setLoggedIn}></AppRoutes>
     </div>
   );
 };

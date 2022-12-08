@@ -26,6 +26,12 @@ const Navbar = (props) => {
                 <Grid item xs>
                     <Button sx={{ color: 'teal' }} onClick={() => navigate("/home")}><DirectionsCarFilledIcon></DirectionsCarFilledIcon></Button>
                 </Grid>
+                <Grid item xs>
+                    <Button onClick={() => navigate("/signup")}>Sign Up</Button>
+                </Grid>      
+                <Grid item xs>
+                    <Button onClick={() => navigate("/login")}>Login</Button>
+                </Grid>                            
             </Grid>)
     }
 

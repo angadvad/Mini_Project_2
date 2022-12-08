@@ -17,7 +17,7 @@ function Signup() {
             body: JSON.stringify(formData)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => { console.log(data); navigate('/login'); })
     }
 
     function handleChange(e) {
